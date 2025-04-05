@@ -10,34 +10,33 @@ export const authConfig = {
     // while this file is also used in non-Node.js environments
   ],
   trustHost: true,
-  callbacks: {
-    authorized({ auth, request: { nextUrl } }) {
-      const isLoggedIn = !!auth?.user;
-      const isHealthCheck = nextUrl.pathname === '/healthcheck';
-      const isOnRegister = nextUrl.pathname.startsWith('/register');
-      const isOnLogin = nextUrl.pathname.startsWith('/login');
+ callbacks: {
+  authorized({ auth, request: { nextUrl } }) {
+    const isLoggedIn = !!auth?.user;
+    const isHealthCheck = nextUrl.pathname === '/healthcheck';
+    const isOnChat = nextUrl.pathname.startsWith('/');
+    const isOnRegister = nextUrl.pathname.startsWith('/register');
+    const isOnLogin = nextUrl.pathname.startsWith('/login');
 
-      // Allow healthcheck without authentication
-      if (isHealthCheck) {
-        return true;
-      }
-
-      // Redirect logged-in users away from auth pages
-      if (isLoggedIn && (isOnLogin || isOnRegister)) {
-        return Response.redirect(new URL('/', nextUrl as unknown as URL));
-      }
-
-      // Allow access to auth pages
-      if (isOnLogin || isOnRegister) {
-        return true;
-      }
-
-      // For all other routes, require authentication
-      if (!isLoggedIn) {
-        return false; // This will redirect to login
-      }
-
+    // Allow healthcheck without authentication
+    if (isHealthCheck) {
       return true;
-    },
+    }
+
+    if (isLoggedIn && (isOnLogin || isOnRegister)) {
+      return Response.redirect(new URL('/', nextUrl as unknown as URL));
+    }
+
+    if (isOnRegister || isOnLogin) {
+      return true; // Always allow access to register and login pages
+    }
+
+    if (isOnChat) {
+      if (isLoggedIn) return true;
+      return false; // Redirect unauthenticated users to login page
+    }
+
+    return true;
   },
+}
 } satisfies NextAuthConfig;
