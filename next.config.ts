@@ -11,6 +11,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Add configuration for Auth.js trusted hosts
+  serverRuntimeConfig: {
+    auth: {
+      trustHost: true,
+    },
+  },
 };
 
 export default nextConfig;
