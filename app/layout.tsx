@@ -1,15 +1,22 @@
+import { config } from 'dotenv';
 import { Toaster } from 'sonner';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 
+config({
+  path: '.env.local',
+});
+
+
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://chat.vercel.ai'),
-  title: 'Next.js Chatbot Template',
-  description: 'Next.js chatbot template using the AI SDK.',
+  metadataBase: new URL(process.env.METADATA_BASE_URL!),
+  title: 'ParcelMind | AI-Powered Land Analysis',
+  description: 'Instantly analyze parcels, zoning laws, market trends, and construction costs to discover the highest and best use for any property with AI-driven insights.',
 };
+
 
 export const viewport = {
   maximumScale: 1, // Disable auto-zoom on mobile Safari
