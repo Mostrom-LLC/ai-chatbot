@@ -8,7 +8,8 @@ config({
   path: '.env.local',
 });
 
-
+console.log(`[DEBUG] NEXTAUTH_URL: ${process.env.NEXTAUTH_URL}`)
+console.log(`[DEBUG] METADATA_BASE_URL: ${process.env.METADATA_BASE_URL}`)
 
 import './globals.css';
 
