@@ -8,8 +8,6 @@ config({
   path: '.env.local',
 });
 
-// Log environment at startup
-console.log('[APP] Starting with NEXT_PUBLIC_APP_NODE_ENV:', process.env.NEXT_PUBLIC_APP_NODE_ENV);
 
 
 import './globals.css';
