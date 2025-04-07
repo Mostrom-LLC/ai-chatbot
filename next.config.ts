@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
   experimental: {
     ppr: true,
   },
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'page.tsx', 'page.ts'],
+  pageExtensions: ['page.tsx', 'page.ts', 'ts'],
   reactStrictMode: true,
   images: {
     remotePatterns: [
