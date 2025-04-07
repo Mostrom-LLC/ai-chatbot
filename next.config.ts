@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
     ppr: true,
   },
   pageExtensions: pageExtensions,
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
