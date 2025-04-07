@@ -1,6 +1,6 @@
-FROM public.ecr.aws/docker/library/node:23.11.0-slim
+FROM public.ecr.aws/docker/library/node:22
 
-RUN apt-get update
+#RUN apt-get update
 ARG NEXTAUTH_URL
 ENV NEXTAUTH_URL=$NEXTAUTH_URL
 ARG AUTH_SECRET
@@ -17,8 +17,8 @@ WORKDIR /app
 RUN npm install -g pnpm
 
 # Install dependencies
-COPY pnpm-lock.yaml package.json ./
-RUN pnpm install --frozen-lockfile
+COPY package.json ./
+RUN pnpm install
 
 # Copy source code
 COPY . .
