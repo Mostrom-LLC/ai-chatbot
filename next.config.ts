@@ -1,5 +1,5 @@
 import type { NextConfig } from 'next';
-import { config } from 'dotenv';
+/* import { config } from 'dotenv';
 
 config({
   path: '.env.local',
@@ -8,14 +8,14 @@ config({
 let pageExtensions = process.env.NEXT_PUBLIC_APP_NODE_ENV === 'development' ? ['page.tsx', 'page.ts', 'ts']: ['js', 'jsx', 'ts', 'tsx', 'page.tsx', 'page.ts']
 
 console.log(`[DEBUG] pageExtensions: ${pageExtensions}`)
-console.log(`[DEBUG] NEXT_PUBLIC_APP_NODE_ENV: ${process.env.NEXT_PUBLIC_APP_NODE_ENV}`)
+console.log(`[DEBUG] NEXT_PUBLIC_APP_NODE_ENV: ${process.env.NEXT_PUBLIC_APP_NODE_ENV}`) */
 
 
 const nextConfig: NextConfig = {
   experimental: {
     ppr: true,
   },
-  pageExtensions: pageExtensions,
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'page.tsx', 'page.ts'],
   reactStrictMode: true,
   images: {
     remotePatterns: [
