@@ -23,6 +23,9 @@ RUN pnpm install
 # Copy source code
 COPY . .
 
+# Clean any existing build artifacts
+RUN rm -rf .next
+
 # Build Next.js application
 ENV NEXT_PUBLIC_APP_ENV=production
 RUN pnpm next build
