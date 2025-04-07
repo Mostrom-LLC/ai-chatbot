@@ -1,3 +1,6 @@
 # Add this .dockerignore file next to your Dockerfile
 # Contents of .dockerignore:
 node_modules
+
+.next
+.vscode
