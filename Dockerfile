@@ -9,8 +9,6 @@ ARG OPENAI_API_KEY
 ENV OPENAI_API_KEY=$OPENAI_API_KEY
 ARG POSTGRES_URL
 ENV POSTGRES_URL=$POSTGRES_URL
-# Build Next.js application
-ENV NEXT_PUBLIC_APP_ENV="development"
 
 
 # Create app directory
