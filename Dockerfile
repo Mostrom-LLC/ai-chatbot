@@ -9,6 +9,10 @@ ARG OPENAI_API_KEY
 ENV OPENAI_API_KEY=$OPENAI_API_KEY
 ARG POSTGRES_URL
 ENV POSTGRES_URL=$POSTGRES_URL
+# Build Next.js application
+ARG NEXT_PUBLIC_APP_ENV
+ENV NEXT_PUBLIC_APP_ENV=$NEXT_PUBLIC_APP_ENV
+
 
 # Create app directory
 WORKDIR /app
@@ -26,8 +30,6 @@ COPY . .
 # Clean any existing build artifacts
 RUN rm -rf .next
 
-# Build Next.js application
-ENV NEXT_PUBLIC_APP_ENV=production
 RUN pnpm next build
 
 # Expose port 80
