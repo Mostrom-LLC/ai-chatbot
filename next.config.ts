@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
   // "ts" is required to resolve `not-found.ts`
   // https://github.com/vercel/next.js/issues/65447
   // Standard Next.js page extensions
-  pageExtensions: process.env.NODE_ENV === "production" ? [] : ["page.tsx", "page.ts", "tsx", "ts"],
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'page.tsx', 'page.ts'],
   images: {
     remotePatterns: [
       {
