@@ -1,9 +1,9 @@
 import type { NextConfig } from 'next';
-import { config } from 'dotenv';
+/* import { config } from 'dotenv';
 
 config({
   path: '.env.local',
-});
+}); */
    
 let pageExtensions = process.env.NEXT_PUBLIC_APP_NODE_ENV === 'production' ? ['js', 'jsx', 'ts', 'tsx', 'page.tsx', 'page.ts']:['page.tsx', 'page.ts', 'ts']
 
