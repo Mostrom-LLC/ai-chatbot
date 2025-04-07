@@ -5,7 +5,7 @@ config({
   path: '.env.local',
 });
    
-let pageExtensions = process.env.NEXT_PUBLIC_APP_NODE_ENV === 'development' ? ['page.tsx', 'page.ts', 'ts']: ['js', 'jsx', 'ts', 'tsx', 'page.tsx', 'page.ts']
+let pageExtensions = process.env.NEXT_PUBLIC_APP_NODE_ENV === 'production' ? ['js', 'jsx', 'ts', 'tsx', 'page.tsx', 'page.ts']:['page.tsx', 'page.ts', 'ts']
 
 console.log(`[DEBUG] pageExtensions: ${pageExtensions}`)
 console.log(`[DEBUG] NEXT_PUBLIC_APP_NODE_ENV: ${process.env.NEXT_PUBLIC_APP_NODE_ENV}`) 
