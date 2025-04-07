@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     ppr: true,
   },
-  pageExtensions: [
+ /*  pageExtensions: [
         "page.tsx",
         "page.ts",
         // FIXME: Next.js has a bug which does not resolve not-found.page.tsx correctly
@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
         // Standard Next.js page extensions
     'tsx',
     'ts',
-    ],
+    ], */
   images: {
     remotePatterns: [
       {
