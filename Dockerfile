@@ -25,7 +25,7 @@ COPY . .
 
 # Build Next.js application
 ENV NEXT_PUBLIC_APP_ENV=production
-RUN pnpm run build
+RUN pnpm next build
 
 # Expose port 80
 EXPOSE 80
