@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/node:23.11.0
+FROM public.ecr.aws/docker/library/node:20.9.0
 
 #RUN apt-get update
 ARG NEXTAUTH_URL
