@@ -1,4 +1,4 @@
-FROM public.ecr.aws/bitnami/node:18.20.2-debian-12-r6
+FROM public.ecr.aws/docker/library/node:23.11.0-slim
 
 RUN apt-get update
 ARG NEXTAUTH_URL
