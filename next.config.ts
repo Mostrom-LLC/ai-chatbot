@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
         // "ts" is required to resolve `not-found.ts`
         // https://github.com/vercel/next.js/issues/65447
         // Standard Next.js page extensions
-    //'tsx',
+    'tsx',
     'ts',
     ],
   images: {
