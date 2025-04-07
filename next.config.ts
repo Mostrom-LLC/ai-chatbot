@@ -12,9 +12,9 @@ console.log(`[DEBUG] NEXT_PUBLIC_APP_NODE_ENV: ${process.env.NEXT_PUBLIC_APP_NOD
 
 
 const nextConfig: NextConfig = {
- /*  experimental: {
+  experimental: {
     ppr: true,
-  }, */
+  },
   //pageExtensions: pageExtensions,
   //reactStrictMode: true,
   images: {
