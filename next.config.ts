@@ -1,24 +1,22 @@
-import type { NextConfig } from "next";
-import { config } from "dotenv";
-
-config({
-  path: ".env.local",
-});
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   experimental: {
     ppr: true,
   },
-  // FIXME: Next.js has a bug which does not resolve not-found.page.tsx correctly
-  // Instead, use `not-found.ts` as a workaround
-  // "ts" is required to resolve `not-found.ts`
-  // https://github.com/vercel/next.js/issues/65447
-  // Standard Next.js page extensions
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'page.tsx', 'page.ts'],
+  pageExtensions: [
+        "page.tsx",
+        "page.ts",
+        // FIXME: Next.js has a bug which does not resolve not-found.page.tsx correctly
+        // Instead, use `not-found.ts` as a workaround
+        // "ts" is required to resolve `not-found.ts`
+        // https://github.com/vercel/next.js/issues/65447
+        "ts"
+    ],
   images: {
     remotePatterns: [
       {
-        hostname: "avatar.vercel.sh",
+        hostname: 'avatar.vercel.sh',
       },
     ],
   },
