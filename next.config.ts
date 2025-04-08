@@ -1,10 +1,10 @@
 import type { NextConfig } from 'next';
 /** @type {import('next').NextConfig} */
-const nextConfig: NextConfig = {
+const nextConfig: NextConfig =  {
   experimental: {
     ppr: true,
   },
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'page.tsx', 'page.ts'],
+  pageExtensions: process.env.NEXTAUTH_URL? ['js', 'jsx', 'ts', 'tsx', 'page.tsx', 'page.ts'] : ['page.tsx', 'page.ts'],
   //reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -19,6 +19,6 @@ const nextConfig: NextConfig = {
       trustHost: true,
     },
   },
-};
+} 
 
 export default nextConfig;
