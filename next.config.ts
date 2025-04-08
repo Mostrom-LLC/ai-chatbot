@@ -4,7 +4,7 @@ const nextConfig: NextConfig =  {
   experimental: {
     ppr: true,
   },
-  pageExtensions: process.env.NEXTAUTH_URL? ['js', 'jsx', 'ts', 'tsx', 'page.tsx', 'page.ts'] : ['page.tsx', 'page.ts'],
+  pageExtensions: process.env.NEXTAUTH_URL? ['js', 'jsx', 'ts', 'tsx', 'page.tsx', 'page.ts'] : ['page.tsx', 'page.ts', "ts"],
   //reactStrictMode: true,
   images: {
     remotePatterns: [
