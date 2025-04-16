@@ -5,7 +5,7 @@ import type { User } from 'next-auth';
 import { useTheme } from 'next-themes';
 import Form from 'next/form';
 
-import { signOut } from '@/app/(auth)/auth';
+import { signOutAction } from '@/app/actions/auth-actions';
 
 import {
   DropdownMenu,
@@ -54,12 +54,7 @@ export function SidebarUserNav({ user }: { user: User }) {
             <DropdownMenuItem asChild>
               <Form
                 className="w-full"
-                action={async () => {
-                  'use server';
-                  await signOut({
-                    redirectTo: '/',
-                  });
-                }}
+                action={() => signOutAction('/')}
               >
                 <button
                   type="submit"
