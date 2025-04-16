@@ -2,8 +2,10 @@
 import { ChevronUp } from 'lucide-react';
 import Image from 'next/image';
 import type { User } from 'next-auth';
-import { signOut } from 'next-auth/react';
 import { useTheme } from 'next-themes';
+import Form from 'next/form';
+
+import { signOut } from '@/app/(auth)/auth';
 
 import {
   DropdownMenu,
@@ -50,17 +52,22 @@ export function SidebarUserNav({ user }: { user: User }) {
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild>
-              <button
-                type="button"
-                className="w-full cursor-pointer"
-                onClick={() => {
-                  signOut({
+              <Form
+                className="w-full"
+                action={async () => {
+                  'use server';
+                  await signOut({
                     redirectTo: '/',
                   });
                 }}
               >
-                Sign out
-              </button>
+                <button
+                  type="submit"
+                  className="w-full cursor-pointer text-left"
+                >
+                  Sign out
+                </button>
+              </Form>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
