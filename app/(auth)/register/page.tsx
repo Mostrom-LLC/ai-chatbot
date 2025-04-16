@@ -24,16 +24,27 @@ export default function Page() {
   );
 
   useEffect(() => {
+    console.log('Register state changed:', state);
+    
     if (state.status === 'user_exists') {
+      console.log('Registration failed: Account already exists');
       toast({ type: 'error', description: 'Account already exists!' });
     } else if (state.status === 'failed') {
-      toast({ type: 'error', description: 'Failed to create account!' });
+      console.error('Registration failed:', state.error || 'Unknown error');
+      toast({ 
+        type: 'error', 
+        description: state.error ? `Failed to create account: ${state.error}` : 'Failed to create account!' 
+      });
     } else if (state.status === 'invalid_data') {
+      console.error('Registration failed: Invalid data', state.validationErrors);
       toast({
         type: 'error',
-        description: 'Failed validating your submission!',
+        description: state.validationErrors 
+          ? `Validation error: ${state.validationErrors}` 
+          : 'Failed validating your submission!',
       });
     } else if (state.status === 'success') {
+      console.log('Registration successful');
       toast({ type: 'success', description: 'Account created successfully!' });
 
       setIsSuccessful(true);
@@ -42,7 +53,12 @@ export default function Page() {
   }, [state, router]);
 
   const handleSubmit = (formData: FormData) => {
-    setEmail(formData.get('email') as string);
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
+    
+    console.log('Submitting registration form with email:', email, 'password length:', password?.length || 0);
+    
+    setEmail(email);
     formAction(formData);
   };
 
