@@ -4,8 +4,8 @@ import { config } from 'dotenv';
 config({
   path: '.env.local',
 });
-
-const nextConfig: NextConfig = process.env.NEXTAUTH_URL ? {
+/** @type {import('next').NextConfig} */
+const nextConfig: NextConfig = /* process.env.NEXTAUTH_URL ? */ {
   experimental: {
     ppr: true,
   },
@@ -22,7 +22,7 @@ const nextConfig: NextConfig = process.env.NEXTAUTH_URL ? {
       trustHost: true,
     },
   },
-} : {
+} /* : {
   experimental: {
     ppr: true,
   },
@@ -41,6 +41,6 @@ const nextConfig: NextConfig = process.env.NEXTAUTH_URL ? {
       trustHost: true,
     },
   },
-}
+} */
 
 export default nextConfig;
