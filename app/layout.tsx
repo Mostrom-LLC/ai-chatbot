@@ -15,8 +15,29 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.METADATA_BASE_URL!),
-  title: 'ParcelMind | AI-Powered Land Analysis',
-  description: 'Instantly analyze parcels, zoning laws, market trends, and construction costs to discover the highest and best use for any property with AI-driven insights.',
+  title: 'Chatbot SDK',
+  description: 'A free, open-source template built with Next.js and the AI SDK that helps you quickly build powerful chatbot applications.',
+  openGraph: {
+    title: "Chatbot SDK",
+    description: "A free, open-source template built with Next.js and the AI SDK that helps you quickly build powerful chatbot applications.",
+    url: process.env.NEXTAUTH_URL,
+    siteName: "Chatbot SDK",
+    images: [
+      {
+        url: "https://cdn.dribbble.com/userupload/36544779/file/original-6f773f9fd476ee693cec3849e4e74b1a.png?resize=752x&vertical=center", // Public URL to your image
+        width: 1200,
+        height: 630,
+        alt: "Chatbot SDK",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chatbot SDK",
+    description: "A free, open-source template built with Next.js and the AI SDK that helps you quickly build powerful chatbot applications.",
+    images: ["https://cdn.dribbble.com/userupload/36544779/file/original-6f773f9fd476ee693cec3849e4e74b1a.png?resize=752x&vertical=center"],
+  },
 };
 
 
